@@ -168,15 +168,6 @@ Walk through what you would test after resolving conflicts:
 
 ---
 
-## Expected Intelligent Solution (at a high level)
-
-A good merge should, in principle:
-1. **Combine imports** from both branches
-2. **Use database models** with **secure password hashing**
-3. **Include input validation** in the database-saving endpoint
-4. **Preserve all functionality** from both branches
-5. **Follow consistent patterns** throughout
-
 ---
 
 ## Real-World Application

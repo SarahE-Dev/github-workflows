@@ -108,25 +108,6 @@ _________________________________
 
 ---
 
-## Expected Response Timeline
-
-### Immediate (0-5 minutes):
-- [ ] **FIRST:** Rotate/revoke all exposed credentials
-- [ ] **SECOND:** Update production with new credentials  
-- [ ] **THIRD:** Verify systems still operational
-
-### Short-term (5-30 minutes):
-- [ ] Clean Git history (revert or rebase)
-- [ ] Push corrected history
-- [ ] Implement immediate prevention (pre-commit hooks)
-- [ ] Document incident
-
-### Long-term (30+ minutes):
-- [ ] Review access logs for unauthorized usage
-- [ ] Implement automated secret scanning
-- [ ] Update team security training
-- [ ] Create incident response procedures
-
 ---
 
 ## Common Mistakes to Avoid
