@@ -100,19 +100,6 @@ secure_example()
 
 ---
 
-## Success Criteria
-
-**Good Work:**
-- Found 4-6 security issues
-- Used professional, constructive language
-- Provided specific suggestions for fixes
-
-**Excellent Work:**
-- Found 6+ security issues including subtle ones
-- Provided code examples in suggestions
-- Correctly prioritized issues by severity
-- Comments would genuinely help improve code quality
-
 ---
 
 ## Real-World Application
