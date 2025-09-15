@@ -1,206 +1,279 @@
-# Professional Git Workflows - Class Materials
+# Professional Git Workflows — Student Guide
 
-**Duration:** 3 hours  
-**Audience:** Developers with basic Git/GitHub knowledge  
-**Focus:** Production-ready workflows, code reviews, merge conflicts, security  
-**Format:** Lecture + Breakout exercises + Individual GitHub Classroom assignment
+## Overview
+**Format:** In-class breakout exercises + after-class individual assignment  
+**Language:** Python  
+**Skills:** Professional Git workflows, code reviews, merge conflicts, security
 
 ---
 
-## 🎯 What Students Will Learn
-
-By the end of this session, students will be able to:
-- Design custom Git workflows that fit their team's needs
-- Write professional pull requests and provide constructive code reviews
+## Learning Objectives
+By completing this assignment, you will:
+- Design custom Git workflows that fit team needs
+- Write professional pull requests and provide constructive code reviews  
 - Resolve merge conflicts systematically and safely
 - Implement security best practices and catch common vulnerabilities
 - Set up automated quality gates with branch protection and hooks
 - Handle Git disasters and recovery scenarios
-- Use advanced GitHub features for team coordination
 
 ---
 
-## 📚 Class Structure & Materials
+## How This Works
 
-### 1. GitHub Classroom Assignment (Individual Work)
-**File:** `github_classroom_assignment.md`
+### In Class
+- Complete the breakout exercises in `breakout-exercises/` locally with classmates:
+  - Code Review
+  - Merge Conflict Resolution
+  - Crisis Management
 
-**What Students Do:**
-- Receive individual GitHub repository with vulnerable Python Flask API
-- Transform basic code into secure, professionally configured repository
-- Complete 4 parts: Repository Setup, Code Review, Merge Conflicts, Crisis Management
-- Work individually but collaborate during breakout sessions
+### After Class (Your Assignment)
+- Take the provided starter code in `starter-code-simple/` and create your own repository from it.
+- You can either:
+  1) Fork/clone this repository and push to a new repo you own, or  
+  2) If you received a GitHub Classroom link, accept it to create your student repo, then copy the starter code into that repo and complete all steps there.
+- Then complete all professionalization steps below using your own repository.
 
-**Instructor Setup:**
-- Create GitHub Classroom assignment using `starter-code-simple/` 
-- Students get their own copy to work on
-- Due 1 week after class (started in class, finished at home)
+Note: Some repository settings (like branch protection) require repository admin permissions. On a GitHub Classroom repo you typically have admin access; if not, create your own repository so you can configure everything.
 
-### 2. Starter Code for Students
-**Directory:** `starter-code-simple/`
+### Part 1: Repository Setup & Security
 
-**Contains:**
-- `app.py` - Basic Flask API with intentional security vulnerabilities
-- `requirements.txt` - Python dependencies
-- `README.md` - Setup instructions and assignment overview
+#### Your Task
+Transform the provided basic Python API into a professionally configured repository with security measures.
 
-**Vulnerabilities Included for Learning:**
-- Hardcoded API keys and database passwords
+#### Starter Code
+You'll receive a basic Flask API with intentional security issues:
+- User authentication system
+- Basic CRUD operations  
+- Configuration management
+- Simple database integration
+
+#### Requirements
+1. **Branch Protection Setup**
+   - Configure branch protection rules for main branch
+   - Require pull request reviews (minimum 1)
+   - Require status checks to pass before merging
+   - Include administrators in restrictions
+
+2. **Security Implementation**
+   - Set up pre-commit hooks to catch hardcoded secrets
+   - Configure automated security scanning (bandit for Python)
+   - Create custom security checks for your codebase
+   - Add proper .gitignore for Python projects
+
+3. **Professional Documentation**
+   - Create comprehensive README with setup instructions
+   - Add pull request template with security checklist
+   - Document your team workflow and standards
+   - Include contributing guidelines
+
+4. **CI/CD Pipeline**
+   - Set up GitHub Actions for automated testing
+   - Add code quality checks (linting, formatting)
+   - Include security scanning in pipeline
+
+---
+
+### Part 2: Code Review Mastery (In Class)
+
+#### Your Task
+Review the provided Python authentication code and identify security vulnerabilities, then provide professional feedback.
+
+#### Code Review Exercise
+You'll review code with multiple security issues including:
+- Hardcoded secrets and credentials
 - SQL injection vulnerabilities
-- Weak MD5 password hashing
+- Weak password hashing
 - Missing input validation
-- Insecure logging of sensitive data
+- Insecure logging practices
 
-### 3. Breakout Exercises (15 minutes each)
-**Directory:** `breakout-exercises/`
+#### What to Produce
+1. **Vulnerability Identification**
+   - Identify at least 8 distinct security issues
+   - Categorize issues by severity (Critical, High, Medium, Low)
+   - Provide specific line numbers and explanations
 
-Students work individually on their GitHub Classroom assignment while discussing with teammates:
+2. **Professional Review Comments**
+   - Write 5 constructive review comments
+   - Use professional, helpful language
+   - Provide specific code examples for fixes
+   - Include security impact assessments
 
-**Exercise 1: Code Review Practice**
-- File: `code_review_exercise.md`
-- Task: Find security vulnerabilities in Python authentication code
-- Skills: Professional code review comments, security awareness
+**Template for Review Comments:**
+```markdown
+**🔴 SECURITY: [Issue Type]**
+**Line X:** [Specific problem description]
+**Impact:** [What could go wrong]
+**Suggestion:** 
+```python
+# Instead of this vulnerable code:
+old_code_example()
 
-**Exercise 2: Merge Conflict Resolution**  
-- File: `merge_conflict_exercise.md`
-- Task: Intelligently combine authentication + database features
-- Skills: Smart conflict resolution, preserving functionality
-
-**Exercise 3: Crisis Management**
-- File: `crisis_management_exercise.md`  
-- Task: Respond to API key leak emergency
-- Skills: Incident response, Git recovery commands
-
-### 4. Instructor Materials
-**File:** `instructor_guide.md`
-
-**Contains:**
-- Detailed class timeline (matches original lesson plan exactly)
-- Setup instructions for GitHub Classroom
-- Common student challenges and solutions
-- Assessment criteria and success indicators
-- Resources for continued learning
-
----
-
-## 🚀 Quick Start for Instructors
-
-### Before Class:
-1. **Set up GitHub Classroom:**
-   - Create new assignment
-   - Upload contents of `starter-code-simple/` as template
-   - Test that students can access and run the code
-
-2. **Prepare Materials:**
-   - Review `instructor_guide.md` for timeline
-   - Print or bookmark breakout exercise files
-   - Test all starter code runs correctly
-
-3. **Plan Breakout Rooms:**
-   - 3-4 students per room
-   - Mixed experience levels if possible
-   - Assign rooms for efficient management
-
-### During Class:
-1. **Follow Original Lesson Plan Structure:**
-   - 6:30-6:45: Opening and assignment overview
-   - 6:45-7:05: Workflows and standards lecture
-   - 7:05-7:20: Pull request mastery lecture
-   - 7:20-7:35: **Breakout 1** - Code review exercise
-   - 7:35-7:55: Merge conflicts lecture
-   - 7:55-8:05: Break
-   - 8:05-8:20: **Breakout 2** - Merge conflict exercise
-   - 8:20-8:40: Git recovery and crisis management lecture
-   - 8:40-8:55: **Breakout 3** - Crisis management exercise
-   - 8:55-9:10: Quality gates and automation lecture
-   - 9:10-9:25: Repository setup workshop
-   - 9:25-9:30: Wrap-up and next steps
-
-2. **Manage Breakout Sessions:**
-   - Students work on their individual GitHub repos
-   - Teams discuss approaches and help each other
-   - Visit rooms to answer questions and check progress
-
-### After Class:
-- Students complete their repositories and documentation
-- Grade individual GitHub Classroom submissions
-- Provide feedback on professional Git skills demonstrated
-
----
-
-## 💡 Key Teaching Points
-
-### Professional Standards Focus:
-- **Security First:** Every exercise emphasizes catching vulnerabilities
-- **Real-World Skills:** Direct application to professional development
-- **Team Collaboration:** Balances individual work with team learning
-- **Crisis Preparedness:** Practice handling real Git disasters
-
-### Python-Specific Elements:
-- Security vulnerabilities common in Python web applications
-- Tools like `bandit` for Python security scanning
-- Flask API scenarios students will recognize
-- Pre-commit hooks configured for Python projects
-
-### Immediate Applicability:
-- Students can implement these workflows at work Monday
-- Skills directly prevent security breaches and Git disasters
-- Professional code review practices improve team productivity
-- Crisis management procedures protect production systems
-
----
-
-## ✅ Success Criteria
-
-### During Class:
-- [ ] Students actively finding security vulnerabilities
-- [ ] Teams helping each other understand Git concepts
-- [ ] Professional discussion about real-world applications
-- [ ] Confident use of Git recovery commands
-
-### Assignment Completion:
-- [ ] Repositories have working branch protection and security scanning
-- [ ] Professional-quality code review comments
-- [ ] Intelligent merge conflict resolutions
-- [ ] Documented incident response procedures
-
-### Long-Term Impact:
-- [ ] Students report using skills in their actual work
-- [ ] Increased confidence with advanced Git workflows
-- [ ] Better security awareness in their projects
-- [ ] Ability to handle Git crises systematically
-
----
-
-## 📂 File Organization
-
+# Use this secure approach:
+secure_code_example()
 ```
-github-workflows/
-├── README.md                           # This overview file
-├── github_classroom_assignment.md      # Student assignment instructions
-├── instructor_guide.md                 # Detailed instructor timeline
-├── starter-code-simple/               # GitHub Classroom template
-│   ├── app.py                         # Flask API with vulnerabilities
-│   ├── requirements.txt               # Python dependencies
-│   └── README.md                      # Student setup instructions
-└── breakout-exercises/                # 15-minute team exercises
-    ├── code_review_exercise.md        # Security vulnerability hunting
-    ├── merge_conflict_exercise.md     # Intelligent conflict resolution
-    └── crisis_management_exercise.md  # Git disaster response
+**Priority:** Critical/High/Medium/Low
 ```
 
 ---
 
-## 🎓 Alignment with Learning Objectives
+### Part 3: Merge Conflict Resolution (In Class)
 
-This class structure directly develops the skills outlined in the original lesson plan:
+#### Scenario
+You'll work through a realistic merge conflict where two developers added different features to the same Python API:
+- **Branch A:** Added authentication and input validation
+- **Branch B:** Added database integration and user management
 
-**Custom Git Workflows** → Repository setup exercise with branch protection  
-**Professional Code Reviews** → Code review exercise with security focus  
-**Merge Conflict Resolution** → Hands-on conflict exercise with real scenarios  
-**Security Best Practices** → Vulnerability hunting throughout all exercises  
-**Quality Gates & Automation** → GitHub Actions and pre-commit hook setup  
-**Git Disaster Recovery** → Crisis management exercise with time pressure  
-**Team Coordination** → Breakout collaboration while maintaining individual accountability
+#### Your Task
+Resolve the conflict by intelligently combining both features rather than simply choosing one side.
 
-Students leave with immediately applicable professional Git skills that protect production systems and improve team productivity.
+#### What to Produce
+1. **Intelligent Resolution**
+   - Combine functionality from both branches
+   - Maintain all important features
+   - Ensure code follows Python best practices
+   - Test that merged code works correctly
+
+2. **Documentation**
+   - Document your resolution decisions
+   - Explain why you chose specific approaches
+   - Create clear commit message explaining the resolution
+
+---
+
+### Part 4: Git Crisis Management (In Class)
+
+#### Emergency Scenario
+"API keys were accidentally committed to your public repository 3 commits ago. The keys are currently active in production."
+
+#### Your Response
+1. **Immediate Actions**
+   - Identify the correct first steps (credential rotation)
+   - Choose appropriate Git commands for cleanup
+   - Implement prevention measures
+
+2. **Documentation**
+   - Create incident response documentation
+   - Document prevention measures implemented
+   - Create team procedures for future incidents
+
+#### Git Recovery Commands You'll Use
+```bash
+# Find the problematic commit
+git log --oneline -10
+
+# Remove secrets from history (if safe)
+git rebase -i HEAD~5
+
+# Or revert if others have pulled
+git revert <commit-hash>
+
+# Implement prevention
+# Set up pre-commit hooks
+# Add secrets to .gitignore
+```
+
+---
+
+## Breakouts (In Class)
+Use the files in `breakout-exercises/` during class. Discuss approaches with your group, but submit your own work in your personal repository.
+
+---
+
+## What to Submit (After Class)
+
+### GitHub Repository
+Your final repository must include:
+- [ ] Working branch protection rules
+- [ ] Security scanning and pre-commit hooks configured
+- [ ] Professional documentation (README, PR template, contributing guidelines)
+- [ ] CI/CD pipeline running successfully
+- [ ] All security vulnerabilities from starter code fixed
+
+### Written Components
+Submit via your repository:
+1. **Code Review Report** (`code_review.md`)
+   - List of security vulnerabilities found
+   - Professional review comments
+   - Explanation of severity ratings
+
+2. **Merge Resolution Report** (`merge_resolution.md`)
+   - Description of conflict scenario
+   - Explanation of resolution approach
+   - Documentation of testing performed
+
+3. **Incident Response Plan** (`incident_response.md`)
+   - Step-by-step crisis response procedures
+   - Prevention measures implemented
+   - Team communication protocols
+
+---
+
+## Evaluation Guide
+
+### Technical Implementation
+- **Repository Setup:** Branch protection, security measures, documentation
+- **Security Fixes:** Resolution of vulnerabilities in starter code
+- **CI/CD Implementation:** Working automated pipeline
+
+### Professional Skills
+- **Code Review Quality:** Professional, actionable feedback
+- **Conflict Resolution:** Intelligent merging that preserves functionality
+
+### Documentation & Process
+- **Written Communication:** Clear, professional documentation
+- **Process Documentation:** Usable procedures for team workflows
+
+---
+
+## Success Criteria
+
+### Minimum Requirements (C Grade)
+- Repository has basic branch protection
+- Identified at least 5 security vulnerabilities
+- Resolved merge conflict without breaking functionality
+- Basic documentation present
+
+### Proficient Work (B Grade)  
+- Professional repository setup with most security measures
+- Identified 6-8 security vulnerabilities with good explanations
+- Intelligent conflict resolution that combines features
+- Clear, helpful documentation
+
+### Excellent Work (A Grade)
+- Industry-standard repository with comprehensive security
+- Identified 8+ vulnerabilities with detailed impact analysis
+- Sophisticated conflict resolution with testing
+- Professional-quality documentation and processes
+
+---
+
+## Resources
+
+### Git Documentation
+- [Git Documentation](https://git-scm.com/doc)
+- [GitHub Flow](https://guides.github.com/introduction/flow/)
+- [Interactive Git Tutorial](https://learngitbranching.js.org/)
+
+### Security Resources
+- [OWASP Python Security](https://owasp.org/www-project-python-security/)
+- [Bandit Security Scanner](https://bandit.readthedocs.io/)
+- [Python Security Best Practices](https://python-security.readthedocs.io/)
+
+### GitHub Features
+- [Branch Protection Rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches)
+- [GitHub Actions](https://docs.github.com/en/actions)
+- [Code Review Best Practices](https://github.com/features/code-review/)
+
+---
+
+## Getting Started
+1. Create a new repository you own (or accept your GitHub Classroom repo if provided). Ensure you have admin access so you can configure branch protection and settings.
+2. Copy the contents of `starter-code-simple/` into your repository.
+3. Install and run the app:
+   ```bash
+   pip install -r requirements.txt
+   python app.py
+   ```
+4. Create a working branch. Implement changes via pull requests with reviews (ask a peer to review).
+5. Add security scanning, pre-commit hooks, CI, and docs. Configure branch protection on `main`.
+6. Complete the three breakout exercises as practice; then finalize your repository and written components.

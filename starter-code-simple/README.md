@@ -1,9 +1,9 @@
-# User Management API - Starter Code
+# User Management API — Starter Code (Students)
 
-⚠️ **EDUCATIONAL PURPOSE**: This code contains intentional security vulnerabilities for learning. Do NOT use in production!
+⚠️ **EDUCATIONAL PURPOSE**: This code contains intentional security vulnerabilities for learning. Do NOT use in production.
 
 ## Overview
-Basic Flask API for user management. Your assignment is to transform this into a secure, professionally configured repository.
+Basic Flask API for user management. Your task is to transform this into a secure, professionally configured repository in your own repo.
 
 ## Current Features
 - User registration
@@ -11,7 +11,7 @@ Basic Flask API for user management. Your assignment is to transform this into a
 - Basic user listing
 - Health check endpoint
 
-## Known Issues (Your Assignment)
+## Known Issues (You will fix these)
 This code has multiple security vulnerabilities you need to identify and fix:
 - Hardcoded secrets
 - SQL injection vulnerabilities
@@ -59,10 +59,10 @@ POST /login
 GET /users
 ```
 
-## Your Mission
-Transform this basic code into a professional, secure repository by:
-1. Setting up proper branch protection and workflows
-2. Implementing security scanning and pre-commit hooks
-3. Fixing all security vulnerabilities
-4. Adding professional documentation
-5. Creating automated CI/CD pipeline
+## What To Do Next
+Create a new repository you own (or use your GitHub Classroom repo with admin access) and copy this folder’s contents into it. Then:
+1. Set up branch protection and a PR-based workflow
+2. Add security scanning and pre-commit hooks
+3. Fix all security vulnerabilities
+4. Add professional documentation (README, PR template, contributing)
+5. Create a CI workflow to run tests, lint, and security scans

@@ -1,8 +1,8 @@
-# Merge Conflict Exercise - In-Class Breakout
+# Merge Conflict Exercise - Theory Breakout
 
 **Duration:** 15 minutes  
-**Format:** Individual work with team support  
-**Objective:** Practice intelligent merge conflict resolution
+**Format:** Group discussion (no coding)  
+**Objective:** Reason about intelligent merge conflict resolution strategies
 
 ---
 
@@ -120,7 +120,7 @@ def create_user():
 
 ---
 
-## Your Challenge (15 minutes)
+## Discussion Challenge (15 minutes)
 
 ### Step 1: Analyze Both Branches (3 minutes)
 **What does each branch accomplish?**
@@ -137,27 +137,21 @@ def create_user():
 - Get users endpoint
 - Session management
 
-### Step 2: Plan Your Integration (3 minutes)
-**How will you combine these features?**
+### Step 2: Plan an Integration Strategy (3 minutes)
+Discuss how you would combine these features in principle. Identify risks, ordering, and validation points.
 
-Your merged solution should:
+Target outcomes:
 - ✅ Use database persistence from Branch B
 - ✅ Include input validation from Branch A
 - ✅ Use secure password hashing from Branch A
 - ✅ Have JWT authentication from Branch A
 - ✅ Keep all endpoints working
 
-### Step 3: Create the Merged Solution (7 minutes)
+### Step 3: Outline an Approach (7 minutes)
+Whiteboard or outline the sequence of steps you would take to perform the merge (branches to create, tests to run, order of resolving conflicts, checkpoints for validation). No coding required.
 
-Write the intelligent merge that combines both features:
-
-```python
-# Your merged solution here
-# Combine the best of both branches
-```
-
-### Step 4: Test Your Logic (2 minutes)
-Walk through your merged code:
+### Step 4: What Would You Test? (2 minutes)
+Walk through what you would test after resolving conflicts:
 - Does user creation validate input AND save to database?
 - Does password hashing work with database storage?
 - Are all imports included?
@@ -168,15 +162,15 @@ Walk through your merged code:
 ## Discussion Questions (Team sharing)
 
 1. **What was your strategy for combining the features?**
-2. **What conflicts did you encounter and how did you resolve them?**
+2. **What conflicts would you expect and how would you resolve them?**
 3. **What would you test to make sure your merge works?**
-4. **How is this different from just "picking one side" of the conflict?**
+4. **How is an intelligent merge different from just "picking one side"?**
 
 ---
 
-## Expected Intelligent Solution
+## Expected Intelligent Solution (at a high level)
 
-A good merge should:
+A good merge should, in principle:
 1. **Combine imports** from both branches
 2. **Use database models** with **secure password hashing**
 3. **Include input validation** in the database-saving endpoint

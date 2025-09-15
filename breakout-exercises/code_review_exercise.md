@@ -16,43 +16,33 @@ import requests
 import sqlite3
 import hashlib
 
-# Issue 1: Hardcoded secrets
 API_KEY = "sk-live-1234567890abcdef"
 DATABASE_URL = "postgresql://admin:password123@localhost/prod"
 DEBUG_MODE = True
 
 def authenticate_user(username, password):
-    # Issue 2: SQL injection vulnerability
     conn = sqlite3.connect("users.db")
     query = f"SELECT * FROM users WHERE username='{username}' AND password='{password}'"
     
-    # Issue 3: No error handling
     result = conn.execute(query).fetchone()
     
-    # Issue 4: Password in logs
     print(f"Login attempt: {username}:{password}")
     
-    # Issue 5: API call without validation
     response = requests.post("https://api.auth.com/verify", 
                            data={"user": username, "key": API_KEY})
     
-    # Issue 6: No status check
     return response.json()
 
 def reset_password(user_id, new_password):
-    # Issue 7: No input validation
-    # Issue 8: Plain text password storage
     conn = sqlite3.connect("users.db")
     query = f"UPDATE users SET password='{new_password}' WHERE id={user_id}"
     conn.execute(query)
     conn.commit()
     
 def hash_password(password):
-    # Issue 9: Weak hashing algorithm
     return hashlib.md5(password.encode()).hexdigest()
 
 def admin_check(user_id):
-    # Issue 10: Hardcoded admin backdoor
     if user_id == 1 or user_id == "admin":
         return True
     return False
@@ -83,18 +73,15 @@ secure_example()
 
 ---
 
-## Expected Issues (Instructor Reference)
+## Hints
 
-1. **Hardcoded API Keys (Lines 6-8)** - Critical
-2. **SQL Injection (Lines 12, 31)** - Critical  
-3. **Password Logging (Line 17)** - High
-4. **Weak MD5 Hashing (Line 35)** - High
-5. **No Input Validation (Line 28)** - Medium
-6. **Missing Error Handling (Line 15)** - Medium
-7. **Insecure API Call (Line 20)** - Medium
-8. **Admin Backdoor (Line 38)** - Critical
-9. **Debug Mode in Production (Line 8)** - Low
-10. **Plain Text Password Storage (Line 31)** - Critical
+- Look for hardcoded secrets and credentials
+- Check for SQL injection risks in string-formatted queries
+- Watch for logging of sensitive data
+- Ensure passwords are hashed with modern algorithms
+- Validate inputs and handle errors
+- Avoid insecure external API usage without checking responses
+- Beware of hidden backdoors and insecure defaults
 
 ---
 

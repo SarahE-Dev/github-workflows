@@ -1,8 +1,8 @@
-# Git Crisis Management Exercise - In-Class Breakout
+# Git Crisis Management Exercise - Theory Breakout
 
 **Duration:** 15 minutes  
-**Format:** Individual response with team discussion  
-**Objective:** Practice responding to Git disasters under time pressure
+**Format:** Group discussion (no commands run)  
+**Objective:** Think through how to respond to Git disasters under time pressure
 
 ---
 
@@ -14,11 +14,11 @@
 
 ---
 
-## Your Emergency Response (10 minutes)
+## Your Emergency Response (10 minutes, discussion)
 
 ### Phase 1: Immediate Damage Control (First 3 minutes)
 
-**CRITICAL: What's your first action?**
+**CRITICAL: What's your first action and why?**
 
 Choose the correct first step:
 - [ ] A) Remove the secrets from the current code
@@ -41,7 +41,7 @@ m1n2o3p Add user management features
 q4r5s6t Initial project setup
 ```
 
-**Choose your Git recovery approach:**
+**Discuss your Git recovery approach:**
 
 **Option A: Safe Revert (if others might have pulled)**
 ```bash
@@ -55,7 +55,7 @@ git rebase -i HEAD~3
 # Remove the problematic commit entirely
 ```
 
-**Which option do you choose and why?**
+**Which option would you choose and why?**
 _________________________________
 
 ### Phase 3: Prevention Implementation (Last 3 minutes)
@@ -71,7 +71,7 @@ config/secrets/
 credentials.json
 ```
 
-2. **Create pre-commit hook:**
+2. **Create pre-commit hook (example):**
 ```bash
 #!/bin/bash
 # Check for secrets before commit
